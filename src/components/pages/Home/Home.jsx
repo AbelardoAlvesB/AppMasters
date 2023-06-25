@@ -8,6 +8,7 @@ function Home() {
   const [replyData, setReplyData] = useState([]);
   const [searchStorage, setSearchStorage] = useState("");
   const [categoryNotFound, setCategoryNotFound] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,15 +29,19 @@ function Home() {
         localStorage.setItem("genres", JSON.stringify(genres));
       } catch (error) {
         console.error("Erro ao buscar dados da API:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     const storedData = localStorage.getItem("apiData");
     const storedGenres = localStorage.getItem("genres");
+    const storedTitles = localStorage.getItem("titles");
 
-    if (storedData && storedGenres) {
+    if (storedData && storedGenres && storedTitles) {
       setReplyData(JSON.parse(storedData));
       setSearchStorage(JSON.parse(storedGenres));
+      setIsLoading(false);
     } else {
       fetchData();
     }
@@ -68,25 +73,31 @@ function Home() {
     <>
       <Header handleChange={handleChange} />
       <div className="container">
-        <div className="space-cards">
-          {categoryNotFound ? (
-            <p className="category">Categoria não encontrada!</p>
-          ) : (
-            replyData.map((value, id) => (
-              <Card
-                key={id}
-                id={id}
-                image={value.thumbnail}
-                name={value.title}
-                description={value.short_description}
-                release={value.release_date}
-                plataform={value.platform}
-                genero={value.genre}
-                button={value.game_url}
-              />
-            ))
-          )}
-        </div>
+        {isLoading ? (
+          <div className="loader-container">
+            <div className="loader">Loading...</div>
+          </div>
+        ) : (
+          <div className="space-cards">
+            {categoryNotFound ? (
+              <p className="category">Categoria não encontrada!</p>
+            ) : (
+              replyData.map((value, id) => (
+                <Card
+                  key={id}
+                  id={id}
+                  image={value.thumbnail}
+                  name={value.title}
+                  description={value.short_description}
+                  release={value.release_date}
+                  plataform={value.platform}
+                  genero={value.genre}
+                  button={value.game_url}
+                />
+              ))
+            )}
+          </div>
+        )}
       </div>
     </>
   );
