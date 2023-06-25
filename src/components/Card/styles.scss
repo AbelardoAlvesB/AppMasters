@@ -3,13 +3,13 @@
     flex-direction: column;
     width: 20rem;
     flex-grow: 1rem;
-    height: 30rem;
+    height: 33rem;
     background-color: #FFFAFF;
     border-radius: 0.625rem;
     align-items: center;
 
     .imagecontainer{
-        height: 11.25rem;
+        height: 11.28rem;
     }
     
     img{
@@ -20,17 +20,19 @@
     }
 
     .textcontainer{
+        width: fit-content;
         text-align: start;
-        padding: 0.5rem;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        flex: 1;
 
         h3{
-            font-size: 17.6px;
+            font-size: 15px;
             font-weight: bold;
             color: #000000;
         }
         
         h2{
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 200;
             color: #000000;
         }
@@ -44,6 +46,7 @@
    button{
         width: 15.625rem;
         height: 1.875rem;
+        margin-bottom: 1rem;
         border: none;
         color: #000000;
         box-shadow: 0 0 40px 40px #CB48B7 inset, 0 0 0 0 #CB48B7;
