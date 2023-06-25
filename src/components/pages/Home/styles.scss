@@ -1,12 +1,20 @@
 .container{
     background-color: #2374AB;
     width: 100%;
-    margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    padding: 13rem 4rem;
-    box-sizing: border-box;
-    gap: 6rem;
     justify-content: center;
    
+    .space-cards{
+        max-width: 1500px;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        padding: 13rem 4rem;
+        box-sizing: border-box;
+        gap: 6rem;
+        justify-content: center;
+
+    }
+
 }

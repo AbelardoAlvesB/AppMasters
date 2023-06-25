@@ -1,6 +1,6 @@
 import "../Card/styles.scss"
 
-const Card = ({image, name, release, description}) => {
+const Card = ({image, name, release, description, plataform, button}) => {
     return(
         <div className="card">
         <div className="imagecontainer">
@@ -10,8 +10,9 @@ const Card = ({image, name, release, description}) => {
             <h3>{name}</h3>
             <h2>{description}</h2> 
             <p>Lançamento: {release}</p>
-            
+            <p>Plataforma: {plataform}</p>
         </div>
+            <button href={button}>Compre Aqui!</button>
         </div>
     )
 }
