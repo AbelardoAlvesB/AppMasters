@@ -1,4 +1,6 @@
 import "../Card/styles.scss"
+import { useNavigate } from "react-router-dom"
+
 
 const Card = ({image, name, release, description, plataform, genero, button}) => {
     return(
@@ -13,7 +15,9 @@ const Card = ({image, name, release, description, plataform, genero, button}) =>
             <p>Plataforma: {plataform}</p>
             <p>Gênero: {genero}</p>
         </div>
-            <button href={button}>Compre Aqui!</button>
+            <a href={button} target="_blank">
+           <button>Jogue Agora!</button>
+           </a>
         </div>
     )
 }
