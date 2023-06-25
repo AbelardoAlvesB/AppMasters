@@ -1,0 +1,44 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    flex-grow: 1rem;
+    height: 30rem;
+    background-color: #FFFAFF;
+    border-radius: 0.625rem;
+
+    .imagecontainer{
+        height: 10.12rem;
+    }
+    
+    img{
+        width: fit-content;
+        object-fit: cover;
+        height: 100%;
+        border-top-left-radius: 0.625rem;
+        border-top-right-radius: 0.625rem;
+    }
+}
+
+    .textcontainer{
+        padding: 0.5rem;
+
+        h3{
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        h2{
+            font-size: 15px;
+            font-weight: 200;
+            color: #000000;
+        }
+
+        p{
+            text-align: start;
+            color: #000000;
+            font-size: 0.8rem;
+        }
+    
+}
